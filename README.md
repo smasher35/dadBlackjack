@@ -4,7 +4,9 @@ Projeto DAD época especial
 
 ---- ATENÇÂO ----
 
-criar a base de dados dad-mongo no robotMongo ou outro software que faça as ligações à base de dados
+1 - criar a base de dados dad-mongo no robotMongo ou outro software que faça as ligações à base de dados
+
+2 - depois têm de registar os vossos users no site  e na mongo alterar o AVATAR de omissão para o vosso
 
 
 1 - na pasta angular executar o comandp "npm install"
