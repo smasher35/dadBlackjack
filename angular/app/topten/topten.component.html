@@ -1,0 +1,38 @@
+<div class="container">    
+    <div id="toptenbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
+        <div class="panel panel-info" >
+            <div class="panel-heading">
+                <div class="panel-title">BLACKJACK - TOP TEN</div> 
+            </div>     
+            <div style="padding-top:30px" class="panel-body" >
+                <div class=bs-example data-example-id=bordered-table>
+                     <table class="table table-bordered">
+                          <thead>
+                               <tr>
+                                    <th>#</th>
+                                    <th style="width:275px">Name</th>
+                                    <th style="width:100px">Total Victories</th>
+                                </tr>
+                           </thead>
+                            <tbody>
+                                <tr *ngFor="let item of highScores" >
+                                    <th scope=row>1</th>
+                                        <td>{{item.name}}</td>
+                                        <td>{{item.totalVictories}}</td>
+                                </tr>
+                                 
+                            </tbody> 
+                    </table> 
+                </div>  
+            </div> 
+            <div style="padding-top:30px; padding-bottom: 30px" class="panel-footer" >
+                <div style="float:right; font-size: 80%; position: relative; top:-10px; margin-bottom: 10px" >
+                    <a style="width:150px" id="btn-home" class="btn btn-success" routerLink ="/home">Home</a>
+                    <a style="width:150px" id="btn-gamelobby" class="btn btn-info" routerLink ="/gamelobby">Game Lobby</a>
+                </div>
+                
+            </div>                    
+        </div>  
+    </div>
+</div>
+       

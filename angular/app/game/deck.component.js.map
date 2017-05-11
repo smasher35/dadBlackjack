@@ -1,0 +1,1 @@
+{"version":3,"file":"deck.component.js","sourceRoot":"","sources":["deck.component.ts"],"names":[],"mappings":";;;;;;;AAAA,sCAAyD;AAczD,IAAa,aAAa;IAA1B;IAKA,CAAC;IAAD,oBAAC;AAAD,CAAC,AALD,IAKC;AALY,aAAa;IANzB,gBAAS,CAAC;QACP,QAAQ,EAAE,MAAM,CAAC,EAAE;QACnB,QAAQ,EAAE,MAAM;QAChB,WAAW,EAAE,qBAAqB;KAErC,CAAC;GACW,aAAa,CAKzB;AALY,sCAAa"}

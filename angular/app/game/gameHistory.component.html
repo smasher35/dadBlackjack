@@ -1,0 +1,53 @@
+<div class="container">    
+    <div id="gamesHistory" style="margin-top:50px;" class="mainbox col-md-12 col-md-offset-0 col-sm-8 col-sm-offset-2">                    
+        <div class="panel panel-info" >
+            <div class="panel-heading">
+                <div class="panel-title">BLACKJACK - GAMES HISTORY</div>
+            </div>     
+
+            <div style="padding-top:30px" class="panel-body" >
+                <div class=bs-example data-example-id=bordered-table>
+                     <table class="table table-bordered">
+                          <thead>
+                               <tr>
+                                    <th style="width:180px">ID Game</th>
+                                    <th style="width:150px">Creator</th>
+                                    <th style="width:120px">Begin Date</th>
+                                    <th style="width:120px">End Date</th>
+                                    <th style="width:120px">Winner 1</th>
+                                    <th style="width:120px">Winner 2</th>
+                                    <th style="width:80px">State</th>
+                                    <th>Players</th>
+                                </tr>
+                           </thead>
+                            <tbody>
+                                <tr *ngFor="let item of allGames">
+                                    <td>{{item._id}}</td>
+                                    <td>{{item.creator}}</td>
+                                    <td>{{item.beginDate | date:shorTime}}</td>
+                                    <td>{{item.endDate | date:shorTime}}</td>
+                                    <td>{{item.winner1}}</td>
+                                    <td>{{item.winner2}}</td>
+                                    <td>{{item.state}}</td>
+                                <td>
+                                    <div  *ngFor="let player of item.players" >
+                                        {{player.name}}
+                                    </div>
+
+                                </td>
+                                </tr>
+                                 
+                            </tbody> 
+                    </table> 
+                </div>  
+                
+            </div> 
+            <div style="padding-top:30px; padding-bottom: 30px" class="panel-footer" >
+                <div style="float:right; font-size: 80%; position: relative; top:-10px; margin-bottom: 10px" >
+                    <a style="width:150px" id="btn-home" class="btn btn-danger" routerLink ="/gamelobby">Close</a>
+                </div>
+                
+            </div>                    
+        </div>  
+    </div>
+</div>

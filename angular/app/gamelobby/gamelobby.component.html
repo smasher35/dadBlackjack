@@ -1,0 +1,106 @@
+<div class="container">
+    <div id="gamelobby" style="margin-top:50px" class="mainbox col-md-12  col-sm-8">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="panel-title">Game Lobby - {{player}} </div>
+            </div>         
+                <div style="padding-top:30px" class="panel-body">
+                <div style="float:left; position: relative; top: -10px" id="avatar">
+                    <img style= "height: 80px; width: 80px;"  src="./../img/{{avatar}}" class="img-circle">
+                    <br>
+                    <button class="btn btn-warning">Change</button>
+                    
+                </div>
+                
+                <div style="float:right; font-size: 80%; position: relative; top:-10px">
+                    <a style="width:150px" id="btn-top10" class="btn btn-success" routerLink ="/topten">Top Ten</a>
+                    <newGame></newGame>
+                    
+                </div>
+             <br>
+             <div style="padding-top:30px" class="panel-body" >
+             <br>
+             <div id="PendingGames">
+             <br>
+             <h3 style="color:white!important">Pending   Games </h3>
+                <div class=bs-example data-example-id=bordered-table>
+                     <table class="table table-bordered">
+                          <thead>
+                               <tr>
+                                    <th style="width:180px">ID Game</th>
+                                    <th style="width:320px">Creator</th>
+                                    <th style="width:80px">State</th>
+                                    <th>Players</th>
+                                    <th style="width:110px; text-align: center">Join</th>
+                                </tr>
+                           </thead>
+                            <tbody>
+                                <tr *ngFor="let item of allGamesPending">
+                                    <td>{{item._id}}</td>
+                                    <td>{{item.creator}} - {{item.name}}</td>
+                                    <td>{{item.state}}</td>
+                                    <td>
+                                        <div  *ngFor="let player of item.players" >
+                                            {{player.name}}
+                                        </div>
+
+                                    </td>
+                                    <td><button id="joinGame" class="btn btn-success" style="width:100%; height: 100%" (click)="joinGame(item._id)">Join</button></td>
+                                </tr>
+                                 
+                            </tbody> 
+                    </table> 
+                </div> 
+            </div> 
+                <div id="runningGames">
+                    <br>
+                    <h3 style="color:white!important">Running Games </h3>
+                    <br>
+                    <div class=bs-example data-example-id=bordered-table>
+                     <table class="table table-bordered">
+                          <thead>
+                               <tr>
+                                    <th style="width:180px">ID Game</th>
+                                    <th style="width:320px">Creator</th>
+                                    <th style="width:80px">State</th>
+                                    <th>Players</th>
+                                    <th style="width:110px; text-align: center">Watch</th>
+                                </tr>
+                           </thead>
+                            <tbody>
+                                <tr *ngFor="let item of allGamesRunning">
+                                    <td>{{item._id}}</td>
+                                    <td>{{item.creator}}</td>
+                                    <td>{{item.state}}</td>
+                                    <td>
+                                        <div  *ngFor="let player of item.players" >
+                                            {{player.name}}
+                                        </div>
+
+                                    </td>
+                                    <td><button id="watchGame" class="btn btn-primary" style="width:100%; height: 100%">Watch</button></td>
+                                </tr>
+                                 
+                            </tbody> 
+                    </table> 
+                </div>  
+                </div>
+                <hr>
+                <div>
+                    <chat-control></chat-control>
+                </div>
+                <div>
+                    <notification-panel></notification-panel>
+                </div>
+                <form role="form" (submit)="logout()" >
+                    <div class="idlogout">.
+                            <br>
+                            <hr>
+                                <button type="submit" style="float:right;  position: relative;" class="btn btn-danger">Log Out</button>
+                            <br>
+                    </div>
+                </form>
+            </div><!-- end panel-body -->
+        </div><!-- end panel -->
+    </div><!-- end gamelobby -->
+</div><!-- end Container -->
