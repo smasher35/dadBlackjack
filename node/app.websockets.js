@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //import { ReflectGetMetadataInvalidTarget } from 'reflect-metadata/temp/test/spec';
 var app_games_1 = require("./app.games");
 var io = require('socket.io');

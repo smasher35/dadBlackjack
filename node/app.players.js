@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var mongodb = require('mongodb');
 var util = require('util');
 var sha1 = require('sha1');

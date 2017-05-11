@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var HandlerSettings = (function () {
     function HandlerSettings(wsServer, security, prefix) {
         if (prefix === void 0) { prefix = '/api/v1/'; }

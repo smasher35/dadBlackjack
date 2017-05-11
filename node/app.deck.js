@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var mongodb = require('mongodb');
 var util = require('util');
 var app_card_1 = require("./app.card");
@@ -63,6 +64,7 @@ var Deck = (function () {
                     card = new app_card_1.Card("p", i);
                 }
                 this.addCard(card);
+                //console.log("" + i + " " + card.toString());
             }
         }
         //console.log("Deck created");

@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var gameHistory_component_1 = require("./game/gameHistory.component");
 var router_1 = require("@angular/router");
 var app_component_1 = require("./app.component");

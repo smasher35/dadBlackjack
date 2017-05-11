@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var Authentication = (function () {
     function Authentication() {
         var _this = this;
