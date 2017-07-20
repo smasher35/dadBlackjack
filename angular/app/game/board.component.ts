@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import {WebSocketService } from '../notifications/websocket.service';
+import { WebSocketService } from '../notifications/websocket.service';
 import { NewGameComponent } from './../game/newGame.component';
 import { GameService } from "./../_services/game.service";
 import { elementAt } from 'rxjs/operator/elementAt';
@@ -11,30 +11,30 @@ import { ActivatedRoute, Router } from '@angular/router';
     templateUrl: 'board.component.html',
     styleUrls: ['board.component.css']
 })
-export class BoardComponent implements OnInit{
+export class BoardComponent implements OnInit {
     public elementos: number[] = [];
-    public creatorName ='';
-    public creatorAvatar :any;
-    public player2Name='';
+    public creatorName = '';
+    public creatorAvatar: any;
+    public player2Name = '';
     public player2Avatar: any;
-    public player3Name='';
+    public player3Name = '';
     public player3Avatar: any;
-    public player4Name='';
+    public player4Name = '';
     public player4Avatar: any;
-    private subscriber: any; 
+    private subscriber: any;
     public id: any;
     public game: any;
-    public loggedUser='';
-    public hand:any;
+    public loggedUser = '';
+    public hand: any;
 
-      
+
     constructor(private websocketService: WebSocketService, private gameService: GameService, private route: ActivatedRoute,
-        private router: Router ) {
-       
+        private router: Router) {
+
     }
 
     ngOnInit() {
-       // get URL parameters
+        // get URL parameters
         this.subscriber = this.route
             .params
             .subscribe(params => {
@@ -42,44 +42,43 @@ export class BoardComponent implements OnInit{
                 this.id = params['id'];
 
             });
-        this.websocketService.getBoardMessages().subscribe((m:any) => {
+        this.websocketService.getBoardMessages().subscribe((m: any) => {
             console.log(m);
             this.elementos = m;
         });
 
 
-        
 
         this.websocketService.joinGameMessages().subscribe((m: any) => {
-            this.game =  m
+            this.game = m
 
             this.creatorName = m.players[0].name;
             this.creatorAvatar = m.players[0].avatar;
-            if(m.players[1] != undefined){
+            if (m.players[1] != undefined) {
                 this.player2Name = m.players[1].name;
-            this.player2Avatar = m.players[1].avatar;
+                this.player2Avatar = m.players[1].avatar;
             }
-             if(m.players[2] != undefined){
+            if (m.players[2] != undefined) {
                 this.player3Name = m.players[2].name;
-            this.player3Avatar = m.players[2].avatar;
+                this.player3Avatar = m.players[2].avatar;
             }
-             if(m.players[3] != undefined){
+            if (m.players[3] != undefined) {
                 this.player4Name = m.players[3].name;
-            this.player4Avatar = m.players[3].avatar;
-            }                
+                this.player4Avatar = m.players[3].avatar;
+            }
         });
 
-    
+
         this.websocketService.postJoinGame({ id: this.id, msg: 'Entrei', name: sessionStorage.getItem('name'), idPlayer: sessionStorage.getItem('_id') });
 
-        this.websocketService.joinGetHandMessage().subscribe((m:any)=>{
+        this.websocketService.joinGetHandMessage().subscribe((m: any) => {
 
-            this.hand=m;
-             console.log(this.hand);
+            this.hand = m;
+            console.log(this.hand);
 
         });
 
-             
+
         // this.getCreatorName();
         // this.getCreatorAvatar();
         // this.getPlayer2Name();
@@ -90,13 +89,13 @@ export class BoardComponent implements OnInit{
         // this.getPlayer4Avatar();
 
     }
-    
-    clickElemento(index: number){
+
+    clickElemento(index: number) {
         this.websocketService.sendClickElementMessage(index);
         console.log(this.game);
     }
 
-    getColor(elemento: number){
+    getColor(elemento: number) {
         switch (elemento) {
             case 0: return 'lightgray';
             case 1: return 'blue';
@@ -108,11 +107,11 @@ export class BoardComponent implements OnInit{
 
     asDeEspadas() {
 
-    this.loggedUser = sessionStorage.getItem('name');
-        
+        this.loggedUser = sessionStorage.getItem('name');
+
     }
 
-    getCreatorName(){
+    getCreatorName() {
         this.creatorName = this.gameService.getCreatorName();
     }
 
@@ -128,7 +127,7 @@ export class BoardComponent implements OnInit{
         this.player2Avatar = this.gameService.getPlayer2Avatar();
     }
 
-     getPlayer3Name() {
+    getPlayer3Name() {
         this.player3Name = this.gameService.getPlayer3Name();
     }
 
@@ -136,26 +135,27 @@ export class BoardComponent implements OnInit{
         this.player3Avatar = this.gameService.getPlayer3Avatar();
     }
 
-     getPlayer4Name() {
+    getPlayer4Name() {
         this.player4Name = this.gameService.getPlayer4Name();
     }
 
     getPlayer4Avatar() {
         this.player4Avatar = this.gameService.getPlayer4Avatar();
     }
-    hasPlayer2(){
+    hasPlayer2() {
         console.log(this.gameService.hasPlayer2());
         return this.gameService.hasPlayer2();
     }
-    hasPlayer3(){
+    hasPlayer3() {
         console.log(this.gameService.hasPlayer3());
         return this.gameService.hasPlayer3();
     }
-    hasPlayer4(){
+    hasPlayer4() {
         console.log(this.gameService.hasPlayer4());
         return this.gameService.hasPlayer4();
     }
-    startGame(){
+    
+    startGame() {
 
 
     }

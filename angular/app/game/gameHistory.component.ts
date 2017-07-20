@@ -17,17 +17,12 @@ export class GameHistoryComponent {
     private Path: string;
     private userId = sessionStorage.getItem('_id');
     
-
     constructor(private authentication: AuthenticationService, public router: Router, public http: Http) {
         this.Path = 'http://localhost:7777/api/v1/';
         this.getAllGames();
     }
 
-    
-
-
     getAllGames() {
-
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
 
@@ -43,10 +38,5 @@ export class GameHistoryComponent {
                 console.log(error.text());
             }
             );
-
     }
-
-
-
-
 }

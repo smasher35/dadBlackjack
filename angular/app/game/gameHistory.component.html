@@ -15,7 +15,6 @@
                                     <th style="width:120px">Begin Date</th>
                                     <th style="width:120px">End Date</th>
                                     <th style="width:120px">Winner 1</th>
-                                    <th style="width:120px">Winner 2</th>
                                     <th style="width:80px">State</th>
                                     <th>Players</th>
                                 </tr>
@@ -26,8 +25,7 @@
                                     <td>{{item.creator}}</td>
                                     <td>{{item.beginDate | date:shorTime}}</td>
                                     <td>{{item.endDate | date:shorTime}}</td>
-                                    <td>{{item.winner1}}</td>
-                                    <td>{{item.winner2}}</td>
+                                    <td>{{item.winner}}</td>
                                     <td>{{item.state}}</td>
                                 <td>
                                     <div  *ngFor="let player of item.players" >

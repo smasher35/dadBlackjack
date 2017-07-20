@@ -1,100 +1,50 @@
-<div class="container">    
-    <div id="board" style="margin-top:50px;;" class="mainbox col-md-12 col-sm-8" >                    
-        <div class="panel panel-info" >
+<div class="container">
+    <div id="board" style="margin-top:50px;;" class="mainbox col-md-12 col-sm-8">
+        <div class="panel panel-info">
             <div class="panel-heading">
                 <div class="panel-title">BLACKJACK - GAME BOARD</div>
-                
-            </div>     
- <h4>Game ID: {{id}}</h4>
-            <div style="padding-top:30px;  background-color: green" class="panel-body" >
+            </div>
+            <h4>Game ID: {{id}}</h4>
+            <!-- TABULEIRO DE JOGO -->
+            <div id="currentPlayer" style="text-align:left; background-color:darkslategrey; color:aqua">
+                    <h3 style="display: inline; color:aqua; padding-left: 10px">Player: </h3><img style="height: 80px; width: 80px;" src="./img/{{creatorAvatar}}" class="img-circle">                    {{creatorName}}
+            </div>
+            <div style="padding-top:15px;  background-color: lightblue" class="panel-body">
                 <!--<div class="container">-->
-                <div class="col-md-12" style="text-align: center; border:2px solid">
-                    <img style= "height: 80px; width: 80px;"  src="./img/{{player2Avatar}}" class="img-circle"><br> {{player2Name}}
-                    
-                </div>  
-                <div class="col-md-2" style="text-align: center; border:2px solid">
-                    <img style= "height: 80px; width: 80px;"  src="./img/{{player3Avatar}}" class="img-circle"><br> {{player3Name}}
-                    
-                </div>   
-                <div class="col-md-8"style="text-align: center; border:2px solid">
-
-                    <!--<div class="container">-->
-                        <div class="col-md-12">
-                            <div class="col-md-2" ><img src="./img/semFace.png" style="width: 50%; height: 50%; text-align:center" class="img-responsive" *ngIf="hasPlayer2()==true"></div><!--player1 div-->
-                            <div class="col-md-2" ><img src="./img/semFace.png" style="width: 50%; height: 50%; text-align:center" class="img-responsive" *ngIf="hasPlayer2()==true"></div><!--player1 div-->
-                            <div class="col-md-2" ><img src="./img/semFace.png" style="width: 50%; height: 50%; text-align:center" class="img-responsive" *ngIf="hasPlayer2()==true"></div><!--player1 div-->
-                            <div class="col-md-2" ><img src="./img/semFace.png" style="width: 50%; height: 50%; text-align:center" class="img-responsive" *ngIf="hasPlayer2()==true"></div><!--player1 div-->
-                            <div class="col-md-2" ><img src="./img/semFace.png" style="width: 50%; height: 50%; text-align:center" class="img-responsive" *ngIf="hasPlayer2()==true"></div><!--player1 div-->
-                        </div>  
-                        <div class="col-md-4" >
-                                    GAME POT MONEY
-                        </div> <!--pot div-->
-                        <div class="col-md-12">   
-                                <div class="col-md-2" ><img src="./img/semface.png" style="width: 50%; height: 50%; text-align:center" class="img-responsive" *ngIf="hasPlayer3()==true"></div><!--player2 div-->
-                                <div class="col-md-2" ><img src="./img/semface.png" style="width: 50%; height: 50%; text-align:center" class="img-responsive" *ngIf="hasPlayer3()==true"></div><!--player2 div-->
-                                <div class="col-md-2" ><img src="./img/semface.png" style="width: 50%; height: 50%; text-align:center" class="img-responsive" *ngIf="hasPlayer3()==true"></div><!--player2 div-->
-                                <div class="col-md-2" ><img src="./img/semface.png" style="width: 50%; height: 50%; text-align:center" class="img-responsive" *ngIf="hasPlayer3()==true"></div><!--player2 div-->
-                                <div class="col-md-2" ><img src="./img/semface.png" style="width: 50%; height: 50%; text-align:center" class="img-responsive" *ngIf="hasPlayer3()==true"></div><!--player2 div-->
-
-                                
-
-                                <div class="col-md-2" ><img src="./img/semFace.png" style="width: 50%; height: 50%; text-align:center" class="img-responsive" *ngIf="hasPlayer4()==true"></div><!--player3 div-->
-                                <div class="col-md-2" ><img src="./img/semFace.png" style="width: 50%; height: 50%; text-align:center" class="img-responsive" *ngIf="hasPlayer4()==true"></div><!--player3 div-->
-                                <div class="col-md-2" ><img src="./img/semFace.png" style="width: 50%; height: 50%; text-align:center" class="img-responsive" *ngIf="hasPlayer4()==true"></div><!--player3 div-->
-                                <div class="col-md-2" ><img src="./img/semFace.png" style="width: 50%; height: 50%; text-align:center" class="img-responsive" *ngIf="hasPlayer4()==true"></div><!--player3 div-->
-                                <div class="col-md-2" ><img src="./img/semFace.png" style="width: 50%; height: 50%; text-align:center" class="img-responsive" *ngIf="hasPlayer4()==true"></div><!--player3 div-->
-                                
-                            
-                        </div>
-                        
-                        <div class="col-md-12">
-                            
-                            <div class="col-md-2"><img src="./img/semFace.png" style="width: 50%; height: 50%; text-align:center" class="img-responsive" ></div><!--player4 div-->
-                            <div class="col-md-2"><img src="./img/semFace.png" style="width: 50%; height: 50%; text-align:center" class="img-responsive" ></div><!--player4 div-->
-                            <div class="col-md-2"><img src="./img/semFace.png" style="width: 50%; height: 50%; text-align:center" class="img-responsive" ></div><!--player4 div-->
-                            <div class="col-md-2"><img src="./img/semFace.png" style="width: 50%; height: 50%; text-align:center" class="img-responsive" ></div><!--player4 div-->
-                            <div class="col-md-2"><img src="./img/semFace.png" style="width: 50%; height: 50%; text-align:center" class="img-responsive" ></div><!--player4 div-->
-                            
-                        </div>
-                    <!--</div>-->
-                    
-                </div>  
-                <div class="col-md-2" style="text-align: center; border:2px solid">
-                    <img style= "height: 80px; width: 80px;"  src="./img/{{player4Avatar}}" class="img-circle"><br> {{player4Name}}
-                    
-                </div> 
-                <div class="col-md-12" style="text-align: center; border:2px solid">
-                    <img style= "height: 80px; width: 80px;"  src="./img/{{creatorAvatar}}" class="img-circle"><br> {{creatorName}}
-                    
+                
+                <div class="playerGameMessages col-md-12" style="text-align: center; color:darkslategrey">
+                    <h2>MESSAGES: YOU WON - Wait for the next round</h2>
                 </div>
-            <!--</div>-->
-            </div> 
-            <div style="padding-top:10px; padding-bottom: 10px;  background-color: green">
-                    
-                    <a style="width:150px" id="btn-home" class="btn btn-success" routerLink ="/gamelobby">Raise/Bet</a> <input type="number" name="betValue">
-                    <a style="width:150px" id="btn-home" class="btn btn-warning" routerLink ="/gamelobby">Fold</a>    
-                    <a style="width:150px" id="btn-home" class="btn btn-info" routerLink ="/gamelobby">Pass</a>         
+                <!-- current players cards -->
+                <div class="col-md-3"></div>
+                <div class="col-md-6" style="text-align:center; display:inline-block">
+                    <div style="text-align: center">
+                        <img src="./img/c5.png" style="width: 25%; height:25%; padding-left: 5px; float:right" class="img-responsive">
+                        <img src="./img/e7.png" style="width: 25%; height:25%; padding-left: 5px; float: right" class="img-responsive">
+                        <img src="./img/o13.png" style="width: 25%; height:25%; padding-left: 5px; float:right" class="img-responsive">
+                    </div>
+                </div>
+                <div class="col-md-3"></div>
+                <div class="playerGameMessages col-md-12" style="text-align: center; color:darkslategrey">
+                    <h2>YOUR SCORE: 21</h2>
+                </div>
+            </div>
+            <div class="playerOtions" style="text-align: center; height: 60px">
+                <a style="width:150px; height: 35px; margin-top:10px;" id="btn-home" class="btn btn-warning" routerLink="/gamelobby">HIT</a>
+                <a style="width:150px; height: 35px; margin-top:10px" id="btn-home" class="btn btn-info" routerLink="/gamelobby">STICK</a>
+            </div>
 
-                </div>
-            <div style="padding-top:30px; padding-bottom: 30px" class="panel-footer" >
-                <div style="float:left; font-size: 80%; position: relative; top:-10px; margin-bottom: 10px" >
-                    <div class="col-md-6">Points Team 1:</div>
-                    <div class="col-md-6" id="pointsTeam1">XXX Points</div>
-                    <div class="col-md-6">Points Team 2:</div>
-                    <div class="col-md-6" id="pointsTeam1">XXX Points</div>
-                    
-                </div>
-                <div style="float:right; font-size: 80%; position: relative; top:-10px; margin-bottom: 10px" >
-                    <a style="width:150px" id="btn-home" class="btn btn-success" routerLink ="/gamelobby">Start</a>
-                    <a style="width:150px" id="btn-home" class="btn btn-danger" routerLink ="/gamelobby">Quit</a>
-                    
-                </div>
+            <div class="tableCards col-md-12" style="text-align: left; background-color:darkslategrey; color:aqua; height: 50px; padding-bottom: 10px">
+                <h3 style="color:aqua">Table Cards</h3>
+            </div>
+
+            <div style="padding-top:15px; padding-bottom: 30px" class="panel-footer">
                 <hr>
                 <div>
-                    <gameChat [idGame] = "id"></gameChat>
+                    <gameChat [idGame]="id"></gameChat>
                 </div>
-              <button class="test" (click)="clickElemento()" md-raised-button color="accent">Console log para mostrar q esta board desenhada e mesma a minha</button>
-            </div>                    
-        </div>  
+                <button class="test" (click)="clickElemento()" md-raised-button color="accent">Console log para mostrar q esta board desenhada e mesma a minha</button>
+            </div>
+        </div>
     </div>
 </div>
