@@ -3,7 +3,7 @@
 #  $ docker build -t ng-quickstart .
 #  $ docker run -it --rm -p 3000:3000 -p 3001:3001 ng-quickstart
 #
-FROM node:current-bullseye-slim
+FROM node:17.7.1-slim
 
 RUN mkdir -p /quickstart /home/nodejs && \
     groupadd -r nodejs && \
